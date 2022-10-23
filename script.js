@@ -25,3 +25,8 @@ async function getRandowUser() {
 
   addData(newUser);
 }
+
+// Add new obj to data arr
+function addData(obj) {
+  data.push(obj);
+}

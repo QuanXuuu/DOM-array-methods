@@ -29,4 +29,19 @@ async function getRandowUser() {
 // Add new obj to data arr
 function addData(obj) {
   data.push(obj);
+
+  updataDOM();
+}
+
+// Update DOM
+function updataDOM(providedData = data) {
+  // Clear main div
+  main.innerHTML = "<h2><strong>Person</strong> Wealth</h2>";
+
+  providedData.forEach((item) => {
+    const element = document.createElement("div");
+    element.classList.add("person");
+    element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
+    main.appendChild(element);
+  });
 }
